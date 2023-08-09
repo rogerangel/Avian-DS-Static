@@ -1,113 +1,249 @@
-import Image from 'next/image'
+import Image from "next/image";
+import Ember from "../../public/Ember.png";
+import Feature_IMG from "../../public/Feature_IMG.jpeg";
+import Hero from "@/components/Hero";
+import { BsCheckCircle } from "react-icons/bs";
+import PackageCards from "@/components/PackageCards";
+import FeatureAnimation from "@/components/FeatureAnimation";
+import Google_iframe from "@/components/Google_iframe";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main className="">
+      <Hero />
+      <div className="w-full h-full bg-slate-50">
+        <FeatureAnimation delay={2.5} duration={0.8}>
+          <h4 className="text-md text-center p-20">
+            YOUR NUMBER ONE DRIVING SCHOOL FOR CDL AND DRIVERS EDUCTION
+          </h4>
+        </FeatureAnimation>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      {/* prices and Packages section */}
+      <div
+        className="gap-10 bg-slate-50 flex flex-row flex-wrap justify-center scroll-mt-28"
+        id="packages"
+      >
+        <PackageCards
+          banner="Package 1"
+          price="$189"
+          featureIcons={<BsCheckCircle />}
+          features={[
+            "1 Lesson of 45 min.",
+            "5 Hours Course",
+            "Road Test Services",
+            "Car for Road Test",
+            "Road Test Guidelines",
+          ]}
+        />
+        <PackageCards
+          banner="Package 2"
+          price="$285"
+          featureIcons={<BsCheckCircle />}
+          features={[
+            "3 Lessons of 45 min.",
+            "5 Hours Course",
+            "Road Test Services",
+            "Car for Road Test",
+            "Road Test Guidelines",
+          ]}
+        />
+        <PackageCards
+          banner="Package 3"
+          price="$339"
+          featureIcons={<BsCheckCircle />}
+          features={[
+            "4 Lessons of 45 min.",
+            "5 Hours Course",
+            "Road Test Services",
+            "Car for Road Test",
+            "Road Test Guidelines",
+          ]}
+        />
+        <PackageCards
+          banner="Package 4"
+          price="$379"
+          featureIcons={<BsCheckCircle />}
+          features={[
+            "5 Lessons of 45 min.",
+            "5 Hours Course",
+            "Road Test Services",
+            "Car for Road Test",
+            "Road Test Guidelines",
+          ]}
+        />
+        <PackageCards
+          banner="Package 5"
+          price="$629"
+          featureIcons={<BsCheckCircle />}
+          features={[
+            "10 Lessons of 45 min.",
+            "5 Hours Course",
+            "Road Test Services",
+            "Car for Road Test",
+            "Road Test Guidelines",
+          ]}
+        />
+        <PackageCards
+          banner="Package 6"
+          price="$759"
+          featureIcons={<BsCheckCircle />}
+          features={[
+            "15 Lessons of 45 min.",
+            "5 Hours Course",
+            "Road Test Services",
+            "Car for Road Test",
+            "Road Test Guidelines",
+          ]}
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      {/* card with business features */}
+      <div className="w-full h-full py-12 bg-avianDS-blue-logo">
+        <FeatureAnimation
+          className="flex flex-row flex-wrap justify-evenly"
+          delay={0.6}
+          duration={0.8}
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
+              Licensed Training
+            </h4>
+            <p className="text-md px-5 text-avianDS-blue-logo">
+              We offer the best driving school services with certified and
+              patient instructors. Our instructors are ready to teach you how to
+              be the best driver you can be.
+            </p>
+          </div>
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
+              Comfort Vehicles
+            </h4>
+            <p className="text-md px-5 text-avianDS-blue-logo">
+              As our student, we want you to be able to drive in the most
+              comfortable and up to date vehicles! We offer 2023 model vehicles
+              ready for you!
+            </p>
+          </div>
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
+              Flexible Schedules
+            </h4>
+            <p className="text-md px-5 text-avianDS-blue-logo">
+              We are open seven days a week! We offer a schedule that
+              accommodates your time and needs. Our instructors can pick you up
+              and drop you off, right at your front door.
+            </p>
+          </div>
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
+              Driving Practice
+            </h4>
+            <p className="text-md px-5 text-avianDS-blue-logo">
+              Our goal is to prepare you become a confident driver. We provide
+              you with all the practice and lessons you need to become the best
+              driver you can be.
+            </p>
+          </div>
+        </FeatureAnimation>
       </div>
+      {/* faqs */}
+      <div id="faqs" className="scroll-m-10" />
+      <FeatureAnimation
+        className="flex flex-col w-full h-full items-center"
+        delay={0.7}
+        duration={1.8}
+      >
+        <div className="max-w-[1100px] p-12 mt-12">
+          <h4 className="text-2xl text-center font-medium">
+            Avian Driving School FAQs
+          </h4>
+          <p className="text-md font-light py-5">
+            Are you ready to take the wheel of your future? Look no further!
+            AVIAN DRIVING SCHOOL is here to equip you with the skills and
+            knowledge you need to be the best driver on the road. Whether
+            you&apos;re a seasoned adult looking to upgrade your skills or a
+            team of aspiring professional drivers, we cater to everyone&apos;s
+            needs.
+          </p>
+          <h3 className="text-xl font-medium">
+            Why Choose AVIAN DRIVING SCHOOL?
+          </h3>
+          <h3 className="text-xl font-medium mt-5">Unmatched Expertise 💼</h3>
+          <p className="text-md font-light py-5">
+            At AVIAN DRIVING SCHOOL, we take immense pride in our team of highly
+            experienced instructors who possess extensive knowledge of both CDL
+            and driver education. Our instructors go through rigorous training
+            and certification processes, ensuring they provide top-notch
+            guidance to all our students. We stay on top of the latest industry
+            standards and techniques, guaranteeing you receive up-to-date
+            instruction.
+          </p>
+          <h3 className="text-xl font-medium">Comprehensive CDL Training 🚚</h3>
+          <p className="text-md font-light py-5">
+            For those seeking a rewarding career in the transportation industry,
+            our CDL training will equip you with the skills necessary to
+            maneuver various commercial vehicles with confidence and precision.
+            We cover all aspects, from pre-trip inspections and basic vehicle
+            control to advanced techniques required for passing the CDL
+            examination. Our professional instructors will guide you every step
+            of the way, ensuring you are ready for success in your new career.
+          </p>
+          <h3 className="text-xl font-medium">Tailored Driver Education 🚗</h3>
+          <p className="text-md font-light py-5">
+            It&apos;s never too late to become a safe and responsible driver.
+            Our driver education programs are tailored to suit individuals of
+            all ages (both adults and teenagers), helping you develop excellent
+            driving habits and techniques that will last a lifetime. Our
+            instructors strive to create a supportive and engaging learning
+            environment, making your journey enjoyable while ensuring you meet
+            all the essential requirements for obtaining your driver&apos;s
+            license.
+          </p>
+          <h3 className="text-xl font-medium">
+            State-of-the-Art Facilities and Training Vehicles 🚛
+          </h3>
+          <p className="text-md font-light py-5">
+            We understand that comfort and convenience play a vital role in your
+            learning experience. That&apos;s why our driving school is equipped
+            with modern facilities and training vehicles. Our fleet consists of
+            well-maintained cars and commercial vehicles, ensuring you gain
+            confidence and competence in handling different types of
+            transportation equipment.
+          </p>
+          <h3 className="text-xl font-medium">Flexible Schedule Options ⏰</h3>
+          <p className="text-md font-light py-5">
+            We recognize that our students have diverse commitments and busy
+            lives. Hence, AVIAN DRIVING SCHOOL offers flexible scheduling
+            options. We customize our programs to fit around your availability,
+            providing convenient time slots for both classroom sessions and
+            behind-the-wheel training. You can continue with your day-to-day
+            activities while making progress towards your driving
+          </p>
+        </div>
+      </FeatureAnimation>
+      {/* an image */}
+      <div className="w-full h-screen max-h-[640px] relative overflow-hidden bg-avianDS-blue justify-evenly">
+        <Image
+          src={Feature_IMG}
+          alt="Feature_IMG"
+          fill="responsive"
+          objectFit="cover"
+          loading="lazy"
+        />
+      </div>
+      <div className="flex flex-col w-full h-full items-center" id="contact">
+        <Google_iframe
+          className="h-[1000px] w-screen p-2 md:p-32"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3016.5055052162716!2d-73.88347932318122!3d40.88272497136851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f31813831973%3A0xfc84ac80932249a9!2sAvian%20Driving%20School!5e0!3m2!1sen!2sus!4v1691419705378!5m2!1sen!2sus"
+          width="auto"
+          height="auto"
+        />
+      </div>
+      {/* embeded google map */}
+      {/* footer with company info */}
     </main>
-  )
+  );
 }
