@@ -6,10 +6,10 @@ function Google_iframe({ src, width, height, className }) {
       width={width}
       height={height}
       style={{ border: 0 }}
-      allowfullscreen=""
+      allowFullScreen=""
       loading="lazy"
       title="Google Map"
-      referrerpolicy="no-referrer-when-downgrade"
+      referrerPolicy="no-referrer-when-downgrade"
     ></iframe>
   );
 }

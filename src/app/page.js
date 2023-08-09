@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Ember from "../../public/Ember.png";
 import Feature_IMG from "../../public/Feature_IMG.jpeg";
+import Feature_IMG_other from "../../public/Feature_IMG_other.jpeg";
 import Hero from "@/components/Hero";
 import { BsCheckCircle } from "react-icons/bs";
 import PackageCards from "@/components/PackageCards";
@@ -104,7 +104,12 @@ export default function Home() {
           duration={0.8}
         >
           <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
-            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <Image
+              src={Feature_IMG_other}
+              alt="Feature_IMG_other Logo"
+              width="auto"
+              height="auto"
+            />
             <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
               Licensed Training
             </h4>
@@ -115,7 +120,12 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
-            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <Image
+              src={Feature_IMG_other}
+              alt="Feature_IMG_other Logo"
+              width="auto"
+              height="auto"
+            />
             <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
               Comfort Vehicles
             </h4>
@@ -126,7 +136,12 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
-            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <Image
+              src={Feature_IMG_other}
+              alt="Feature_IMG_other Logo"
+              width="auto"
+              height="auto"
+            />
             <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
               Flexible Schedules
             </h4>
@@ -137,7 +152,12 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
-            <Image src={Ember} alt="Ember Logo" width="auto" height="auto" />
+            <Image
+              src={Feature_IMG_other}
+              alt="Feature_IMG_other Logo"
+              width="auto"
+              height="auto"
+            />
             <h4 className="text-2xl py-5 font-bold text-avianDS-blue-logo">
               Driving Practice
             </h4>
