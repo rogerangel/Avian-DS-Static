@@ -15,28 +15,49 @@ function Hero() {
 
   //get the height of the image so the div can be the same height
   const [height, setHeight] = useState(0);
-  const [width, setWidth] = useState(0);
 
-  //get the top and left of the image so the div can be the same height
-  const [top, setTop] = useState(0);
-  const [left, setLeft] = useState(0);
-
-  //   const onImageLoad = ({ target: img }) => {
-  //     setHeight(img.height);
-  //     setWidth(img.Width);
-  //     setTop(img.top);
-  //     setLeft(img.left);
-  //   };
+  const refImageToCopy = useRef(null);
+  const refImageLeft = useRef(null);
+  const refImageRight = useRef(null);
+  const [dimensions, setDimensions] = useState({ width: "auto", height: 0 });
+  // //   const onImageLoad = ({ target: img }) => {
+  // //     setHeight(img.height);
+  // //     setWidth(img.Width);
+  // //     setTop(img.top);
+  // //     setLeft(img.left);
+  // //   };
 
   useEffect(() => {
     const img = document.getElementById("center");
     setHeight(img.height);
-    setWidth(img.Width);
-    setTop(img.top);
-    setLeft(img.left);
+  }, [height]);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (refImageToCopy.current) {
+        setDimensions({
+          // width: refImageToCopy.current.offsetWidth,
+          height: refImageToCopy.current.offsetHeight,
+        });
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
-  // how do i auto adjust the height of the div to the height of the image?
+  useEffect(() => {
+    if (refImageLeft.current && refImageRight.current && dimensions) {
+      refImageLeft.current.style.width =
+        dimensions.width === "auto" ? "auto" : `${dimensions.width}px`;
+      refImageLeft.current.style.height = `${dimensions.height}px`;
+      refImageRight.current.style.width =
+        dimensions.width === "auto" ? "auto" : `${dimensions.width}px`;
+      refImageRight.current.style.height = `${dimensions.height}px`;
+    }
+  }, [dimensions]);
 
   return (
     <motion.div
@@ -51,6 +72,7 @@ function Hero() {
       className="relative"
     >
       <Image
+        ref={refImageToCopy}
         src={IMG_0097_center}
         alt="Avian Driving School Front Image"
         width="auto"
@@ -65,13 +87,14 @@ function Hero() {
         animate={{ opacity: inView ? 1 : 0 }}
         transition={{
           duration: 1.5,
-          delay: 1,
+          delay: 1.4,
           ease: [0, 0.71, 0.2, 1.01],
         }}
-        className={`absolute top-[0] left-[0] h-[${height}]`}
-        // className={`absolute top-[${top}] left-[${left}]`}
+        className={`absolute top-[0] left-[0]`}
+        // className={`absolute top-[0] left-[0] h-[${height}]`}
       >
         <Image
+          ref={refImageLeft}
           src={IMG_0097_left}
           alt="Avian Driving School Front Image"
           width="auto"
@@ -84,7 +107,7 @@ function Hero() {
         animate={{ opacity: inView ? 1 : 0 }}
         transition={{
           duration: 0.8,
-          delay: 1.7,
+          delay: 2.1,
           ease: [0, 0.71, 0.2, 1.01],
         }}
         // cover the right side of the image
@@ -92,6 +115,7 @@ function Hero() {
         // className={`absolute top-[${top}] left-[${left}]`}
       >
         <Image
+          ref={refImageRight}
           src={IMG_0097_right}
           alt="Avian Driving School Front Image"
           width="auto"

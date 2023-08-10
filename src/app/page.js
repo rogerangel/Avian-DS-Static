@@ -10,6 +10,7 @@ import Google_iframe from "@/components/Google_iframe";
 export default function Home() {
   return (
     <main className="">
+      <div id="hero" />
       <Hero />
       <div className="w-full h-full bg-slate-50">
         <FeatureAnimation delay={2.5} duration={0.8}>
