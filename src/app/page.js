@@ -99,11 +99,11 @@ export default function Home() {
       {/* card with business features */}
       <div className="w-full h-full py-12 bg-avianDS-blue-logo">
         <FeatureAnimation
-          className="flex flex-row flex-wrap justify-evenly"
+          className="flex flex-row justify-evenly"
           delay={0.6}
           duration={0.8}
         >
-          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[450px] w-full bg-white p-5 text-center shadow-2xl">
             <Image
               src={Feature_IMG_other}
               alt="Feature_IMG_other Logo"
@@ -119,7 +119,7 @@ export default function Home() {
               be the best driver you can be.
             </p>
           </div>
-          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[450px] w-full bg-white p-5 text-center shadow-2xl">
             <Image
               src={Feature_IMG_other}
               alt="Feature_IMG_other Logo"
@@ -135,7 +135,7 @@ export default function Home() {
               ready for you!
             </p>
           </div>
-          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[450px] w-full bg-white p-5 text-center shadow-2xl">
             <Image
               src={Feature_IMG_other}
               alt="Feature_IMG_other Logo"
@@ -151,7 +151,7 @@ export default function Home() {
               and drop you off, right at your front door.
             </p>
           </div>
-          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[420px] w-full bg-white p-5 text-center shadow-2xl">
+          <div className="flex flex-col overflow-visible relative m-10 max-w-[348px] h-[450px] w-full bg-white p-5 text-center shadow-2xl">
             <Image
               src={Feature_IMG_other}
               alt="Feature_IMG_other Logo"
