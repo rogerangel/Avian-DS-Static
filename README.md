@@ -2,6 +2,6 @@
 
 #Avian Driving School
 
-This app is deployed statically but no yet ready!
+This app is deployed statically but not yet ready for production!
 
 To preview the deployed app hit this link: https://rogerangel.github.io/Avian-DS-Static/
