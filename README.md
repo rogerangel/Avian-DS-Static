@@ -1,6 +1,6 @@
-#This landing page is being developed with the Next.js Framework Technology
+##This landing page is being developed with the Next.js Framework Technology
 
-#Avian Driving School
+##Avian Driving School
 
 This app is deployed statically but not yet ready for production!
 
