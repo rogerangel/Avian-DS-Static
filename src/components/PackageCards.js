@@ -62,7 +62,7 @@ function PackageCards({ banner, price, features, featureIcons }) {
         </svg>
       </div>
       <div className="mt-5 flex flex-col items-end">
-        <h1 className="text-6xl font-bold text-gray-700">{price}</h1>
+        <h1 className="text-6xl font-bold text-gray-700">{`$${price}`}</h1>
       </div>
       <div className="mt-10 ps-5 flex flex-col items-start">
         {features.map((feature, key) => (

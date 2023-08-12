@@ -7,6 +7,7 @@ import { BsCarFrontFill } from "react-icons/bs";
 import Image from "next/image";
 import card_driver from "../../public/card_driver.jpeg";
 import motorbike from "../../public/motorbike.jpeg";
+import PackageCards from "./PackageCards";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -14,14 +15,8 @@ function classNames(...classes) {
 
 export default function Tabs({ data, icon }) {
   let [categories] = useState(data);
-  const packRef = useRef(null);
   const cardRef = useRef(null);
   const cardTltRef = useRef(null);
-  const packInView = useInView(packRef, {
-    once: true,
-    //point of contact right before the element enters the viewport
-    margin: "50%",
-  });
   const cardInView = useInView(cardRef, {
     once: true,
   });
@@ -33,7 +28,7 @@ export default function Tabs({ data, icon }) {
     <div className="w-full px-2 py-16 sm:px-0">
       <Tab.Group>
         <div className="flex justify-center">
-          <Tab.List className="max-w-3xl flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+          <Tab.List className="max-w-lg flex space-x-1 rounded-xl bg-blue-900/20 p-1">
             {Object.keys(categories).map((category) => (
               <Tab
                 key={category}
@@ -126,7 +121,7 @@ export default function Tabs({ data, icon }) {
                                       {service[0]}
                                     </p>
                                     {/* <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-                                  email@windster.com
+                                  span
                                 </p> */}
                                   </div>
                                   <div className="inline-flex items-center text-base font-semibold text-gray-900">
@@ -150,100 +145,17 @@ export default function Tabs({ data, icon }) {
                     post.reference != "category"
                   ) {
                     return (
-                      <motion.div
+                      <PackageCards
                         key={ids}
-                        ref={packRef}
-                        className="overflow-visible relative m-10 max-w-[348px] h-auto pb-6 w-full rounded-3xl bg-white p-4 text-center shadow-2xl"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{
-                          opacity: packInView ? 1 : 0,
-                          scale: packInView ? 1 : 0.5,
-                        }}
-                        transition={{
-                          duration: 0.8,
-                          delay: 0.2,
-                          ease: [0, 0.71, 0.2, 1.01],
-                        }}
-                      >
-                        <div className="absolute mt-2 -left-10">
-                          <svg xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                              <linearGradient
-                                id="grad1"
-                                x1="0%"
-                                y1="0%"
-                                x2="100%"
-                                y2="0%"
-                              >
-                                <stop
-                                  offset="0%"
-                                  style={{
-                                    stopColor: "rgb(254, 144, 76)",
-                                    stopOpacity: 1,
-                                  }}
-                                />
-                                <stop
-                                  offset="100%"
-                                  style={{
-                                    stopColor: "rgb(253, 185, 90)",
-                                    stopOpacity: 1,
-                                  }}
-                                />
-                              </linearGradient>
-                            </defs>
-                            <path
-                              d="M 0 0 H 220 V 80 0 Q 220 0, 180 80 H 30 Q 0 80, 0 50 Z"
-                              // fill="rgb(254, 144, 76)"
-                              fill="url(#grad1)"
-                            />
-                            <text
-                              x="84"
-                              y="50"
-                              textAnchor="middle"
-                              fill="white"
-                              fontFamily="Verdana"
-                              fontSize="30"
-                              fontSizeAdjust="auto"
-                            >
-                              {`${post.type} ${post.reference}`}
-                            </text>
-                            <line
-                              x1="200"
-                              y1="-5"
-                              x2="140"
-                              y2="115"
-                              stroke="white"
-                              strokeWidth="7"
-                            />
-                          </svg>
-                        </div>
-                        <div className="mt-5 flex flex-col items-end">
-                          <h1 className="text-6xl font-bold text-gray-700">
-                            {`$${post.price}`}
-                          </h1>
-                        </div>
-                        <div className="mt-10 ps-5 flex flex-col items-start">
-                          {post.services.map((feature, key) => (
-                            <div
-                              key={key}
-                              className="inline-flex items-center py-2 gap-2"
-                            >
-                              <div className="text-2xl text-blue-900">
-                                {icon}
-                              </div>
-                              <p className="text-gray-500 text-2xl">
-                                {feature}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                      </motion.div>
+                        banner={`${post.type} ${post.reference}`}
+                        price={post.price}
+                        features={post.services}
+                        featureIcons={icon}
+                      />
                     );
                   }
                 })}
               </div>
-              {/* check for services */}
-              {/* <div className="flex justify-center">text</div> */}
             </Tab.Panel>
           ))}
         </Tab.Panels>

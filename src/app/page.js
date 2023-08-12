@@ -27,7 +27,7 @@ export default function Home() {
       {/* card with business features */}
       <div className="w-full h-full py-12 bg-avianDS-blue-logo">
         <FeatureAnimation
-          className="flex flex-row justify-evenly"
+          className="flex flex-row flex-wrap justify-evenly"
           delay={0.6}
           duration={0.8}
         >
