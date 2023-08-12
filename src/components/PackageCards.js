@@ -23,7 +23,7 @@ function PackageCards({ banner, price, features, featureIcons }) {
       }}
     >
       <div className="absolute mt-2 -left-10">
-        <svg width="220" height="85" xmlns="http://www.w3.org/2000/svg">
+        <svg xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop

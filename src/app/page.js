@@ -3,16 +3,17 @@ import Feature_IMG from "../../public/Feature_IMG.jpeg";
 import Feature_IMG_other from "../../public/Feature_IMG_other.jpeg";
 import Hero from "@/components/Hero";
 import { BsCheckCircle } from "react-icons/bs";
-import PackageCards from "@/components/PackageCards";
+import Tabs from "@/components/Tabs";
 import FeatureAnimation from "@/components/FeatureAnimation";
 import Google_iframe from "@/components/Google_iframe";
+import { services_data } from "./services_data";
 
 export default function Home() {
   return (
     <main className="">
-      <div id="hero" />
+      <div id="hero" className="scroll-mt-28" />
       <Hero />
-      <div className="w-full h-full bg-slate-50">
+      <div className="w-full h-full">
         <FeatureAnimation delay={2.5} duration={0.8}>
           <h4 className="text-md text-center p-20">
             YOUR NUMBER ONE DRIVING SCHOOL FOR CDL AND DRIVERS EDUCTION
@@ -20,82 +21,8 @@ export default function Home() {
         </FeatureAnimation>
       </div>
       {/* prices and Packages section */}
-      <div
-        className="gap-10 bg-slate-50 flex flex-row flex-wrap justify-center scroll-mt-28"
-        id="packages"
-      >
-        <PackageCards
-          banner="Package 1"
-          price="$189"
-          featureIcons={<BsCheckCircle />}
-          features={[
-            "1 Lesson of 45 min.",
-            "5 Hours Course",
-            "Road Test Services",
-            "Car for Road Test",
-            "Road Test Guidelines",
-          ]}
-        />
-        <PackageCards
-          banner="Package 2"
-          price="$285"
-          featureIcons={<BsCheckCircle />}
-          features={[
-            "3 Lessons of 45 min.",
-            "5 Hours Course",
-            "Road Test Services",
-            "Car for Road Test",
-            "Road Test Guidelines",
-          ]}
-        />
-        <PackageCards
-          banner="Package 3"
-          price="$339"
-          featureIcons={<BsCheckCircle />}
-          features={[
-            "4 Lessons of 45 min.",
-            "5 Hours Course",
-            "Road Test Services",
-            "Car for Road Test",
-            "Road Test Guidelines",
-          ]}
-        />
-        <PackageCards
-          banner="Package 4"
-          price="$379"
-          featureIcons={<BsCheckCircle />}
-          features={[
-            "5 Lessons of 45 min.",
-            "5 Hours Course",
-            "Road Test Services",
-            "Car for Road Test",
-            "Road Test Guidelines",
-          ]}
-        />
-        <PackageCards
-          banner="Package 5"
-          price="$629"
-          featureIcons={<BsCheckCircle />}
-          features={[
-            "10 Lessons of 45 min.",
-            "5 Hours Course",
-            "Road Test Services",
-            "Car for Road Test",
-            "Road Test Guidelines",
-          ]}
-        />
-        <PackageCards
-          banner="Package 6"
-          price="$759"
-          featureIcons={<BsCheckCircle />}
-          features={[
-            "15 Lessons of 45 min.",
-            "5 Hours Course",
-            "Road Test Services",
-            "Car for Road Test",
-            "Road Test Guidelines",
-          ]}
-        />
+      <div className="w-full scroll-mt-32" id="packages">
+        <Tabs data={services_data} icon={<BsCheckCircle />} />
       </div>
       {/* card with business features */}
       <div className="w-full h-full py-12 bg-avianDS-blue-logo">
