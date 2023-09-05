@@ -28,13 +28,13 @@ export default function Tabs({ data, icon }) {
     <div className="w-full px-2 py-16 sm:px-0">
       <Tab.Group>
         <div className="flex justify-center">
-          <Tab.List className="max-w-lg flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+          <Tab.List className="max-w-lg w-full flex space-x-1 rounded-xl bg-blue-900/20 p-1">
             {Object.keys(categories).map((category) => (
               <Tab
                 key={category}
                 className={({ selected }) =>
                   classNames(
-                    "w-screen rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
+                    "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
                     "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
                     selected
                       ? "bg-white shadow"
@@ -50,15 +50,15 @@ export default function Tabs({ data, icon }) {
         <Tab.Panels>
           {Object.values(categories).map((pack, idx) => (
             <Tab.Panel key={idx}>
-              <div className="flex flex-wrap justify-center mt-10">
-                <div className="inline-flex justify-evenly w-full">
+              <div className="flex justify-center mt-10">
+                <div className="flex justify-center flex-col gap-4 w-full md:flex-row">
                   {pack.map((post, ids) => {
                     if (post.reference === "category") {
                       return (
                         <motion.div
                           key={ids}
                           ref={cardTltRef}
-                          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-2xl"
+                          className="flex flex-col items-center bg-white border border-gray-200 rounded-lg w-full shadow md:flex-row md:max-w-2xl"
                           initial={{ opacity: 0, scale: 0.5 }}
                           animate={{
                             opacity: cardTltInView ? 1 : 0,
@@ -138,7 +138,7 @@ export default function Tabs({ data, icon }) {
                   })}
                 </div>
               </div>
-              <div className="flex flex-row flex-wrap w-screen mt-10 justify-center gap-10 px-5">
+              <div className="flex flex-row flex-wrap w-screen mt-10 justify-center gap-10 px-1 md:px-5">
                 {pack.map((post, ids) => {
                   if (
                     post.reference != "services" &&

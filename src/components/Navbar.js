@@ -25,7 +25,7 @@ function Navbar() {
               />
             </button>
           </div>
-          <div className="flex flex-inline items-center justify-center space-x-8 text-lg">
+          <div className="flex flex-inline items-center justify-cente space-x-2 md:space-x-8 md:text-lg text-xs">
             <button onClick={scroll2Sel("packages")}>Prices & Packages</button>
             <button onClick={scroll2Sel("faqs")}>About Us</button>
             <button onClick={scroll2Sel("contact")}>Find Us</button>
